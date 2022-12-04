@@ -1,0 +1,181 @@
+{
+    "name": "Frozen",
+    "color": "#44C3D1",
+    "rarity": 1,
+    "landBiomes": [
+        "frozen/plains",
+        "frozen/pines",
+        "frozen/plains",
+        "frozen/mountain",
+        "frozen/redwood-forest",
+        "frozen/hills",
+        "frozen/pine-plains",
+        "frozen/spruce-plains"
+    ],
+    "jigsawStructures": [
+        {
+            "structure": "dungeon-skeleton",
+            "rarity": 250
+        },
+        {
+            "structure": "dungeon-spider",
+            "rarity": 250
+        },
+        {
+            "structure": "dungeon-zombie",
+            "rarity": 250
+        }
+    ],
+    "objects": [
+        {
+            "heightmap": {
+                "seed": 1337,
+                "style": {
+                    "style": "SIMPLEX",
+                    "multiplier": 10
+                },
+                "offsetY": 5
+            },
+            "chance": 0.05,
+            "bottom": true,
+            "density": 1,
+            "place": [
+                "structures/amethyst1",
+                "structures/amethyst2",
+                "structures/amethyst3",
+                "structures/amethyst4",
+                "structures/amethyst5",
+                "structures/amethyst6"
+            ],
+            "edit": [{
+                "find": [{"block": "minecraft:glass"}],
+                "replace": {"palette": [{"block": "minecraft:void_air"}]}
+            }],
+            "enabled": true,
+            "xAxis": {
+                "interval": 90,
+                "max": 360,
+                "min": 0
+            },
+            "yAxis": {
+                "interval": 90,
+                "max": 360,
+                "min": 0
+            },
+            "translate": {
+                "yRandom": 10,
+                "y": 2
+            }
+        },
+        {
+            "name": "standard-surface-portals",
+            "chance": 0.00001,
+            "place": [
+                "structures/swordnp2",
+                "structures/swordnp1",
+                "structures/swordnpstr2",
+                "structures/swordnpstr1",
+                "structures/giantportal1",
+                "structures/giantportal2",
+                "structures/giantportal3",
+                "structures/megaportal1",
+                "structures/megaportal2"
+            ],
+            "edit": [
+                {
+                    "find": [{"block": "minecraft:gold_block"}],
+                    "replace": {"palette": [{"block": "minecraft:air"}]},
+                    "chance": 0.1
+                },
+                {
+                    "find": [{"block": "minecraft:netherrack"}],
+                    "replace": {"palette": [{"block": "minecraft:magma_block"}]},
+                    "chance": 0.07
+                },
+                {
+                    "find": [{"block": "minecraft:obsidian"}],
+                    "replace": {"palette": [{"block": "minecraft:crying_obsidian"}]},
+                    "chance": 0.15
+                },
+                {
+                    "find": [{"block": "minecraft:lava"}],
+                    "replace": {"palette": [{"block": "minecraft:magma_block"}]},
+                    "chance": 0.2
+                }
+            ],
+            "mode": "PAINT",
+            "carvingSupport": "SURFACE_ONLY"
+        }
+    ],
+    "shoreBiomes": ["frozen/shore/beach"],
+    "seaBiomes": [
+        "frozen/sea/frozen-river-ice",
+        "frozen/sea/ocean"
+    ],
+    "deposits": [
+        {
+            "minHeight": 8,
+            "maxPerChunk": 5,
+            "maxHeight": 45,
+            "minPerChunk": 1,
+            "minSize": 2,
+            "maxSize": 4,
+            "palette": [{"block": "minecraft:diamond_ore"}],
+            "varience": 4
+        },
+        {
+            "minHeight": 1,
+            "maxPerChunk": 5,
+            "maxHeight": 84,
+            "minPerChunk": 1,
+            "minSize": 3,
+            "maxSize": 8,
+            "palette": [{"block": "minecraft:copper_ore"}],
+            "varience": 8
+        }
+    ],
+    "riverRarity": 1,
+    "landBiomeZoom": 5,
+    "shoreHeightMin": 2.2,
+    "shoreHeightMax": 4.2,
+    "entitySpawners": [
+        "frozen/passive",
+        "frozen/hostile",
+        "frozen/cave",
+        "frozen/water"
+    ],
+    "carving": {
+        "ravines": [{
+            "rarity": 150,
+            "ravine": "ice/main"
+        }],
+        "caves": [
+            {
+                "breakSurface": true,
+                "cave": "ice/main",
+                "rarity": 10,
+                "caveStartHeight": {
+                    "max": 400,
+                    "min": 15,
+                    "style": {"style": "VASCULAR"}
+                }
+            },
+            {
+                "breakSurface": true,
+                "cave": "rocky/main",
+                "rarity": 50,
+                "caveStartHeight": {
+                    "max": 400,
+                    "min": 15,
+                    "style": {"style": "STATIC"}
+                }
+            }
+        ]
+    },
+    "shoreHeightZoom": 1.14,
+    "riverThickness": 0.006,
+    "loot": {
+        "mode": "REPLACE",
+        "tables": ["frozen/clutter", "frozen/food", "snow/clutter"]
+    }
+}
